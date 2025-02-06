@@ -1,2 +1,0 @@
-# bisg
-implementing bisg

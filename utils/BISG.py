@@ -42,9 +42,9 @@ if __name__ == "__main__":
     myBISG=BISG(
                 census_surname_data= [str(dirname.absolute())+'/input_files/Names_2010Census.csv',str(dirname.absolute())+'/input_files/app_c.csv'],
                 #surname_data=[str(dirname.absolute())+'/input_files/Names_2010Census.csv'],
-                census_block_group_data=str(dirname.absolute())+'/input_files/blkgrp_over18_race_jan20.dta',
-                census_tract_data=str(dirname.absolute())+'/input_files/tract_over18_race_jan20.dta',
-                census_zip_data=str(dirname.absolute())+'/input_files/zip_over18_race_jan20.dta',
+                census_block_group_data=str(dirname.absolute())+'/input_files/blkgrp_over18_race_jan20.csv',
+                census_tract_data=str(dirname.absolute())+'/input_files/tract_over18_race_jan20.csv',
+                census_zip_data=str(dirname.absolute())+'/input_files/zip_over18_race_jan20.csv',
                 debug=True
                 )
 

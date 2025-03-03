@@ -6,8 +6,6 @@ The goal of this repo is to provide a simple, easily import-able, BISG class tha
 
 The `BISG` class can be imported and instantiated as so
 
-**(this is currently desired behavior and not yet implemented, right now you still have to pass arguments to BISG's constructor, which we will lock up later)**
-
 ```{python}
 from BISG import BISG
 
@@ -15,7 +13,7 @@ from BISG import BISG
 myBISG=BISG()
 ```
 
-In the instantiation of the `BISG` object, a series of probability look-up tables are constructed from 2000 and 2010 census data. These tables will be referenced when a user uses the predict method of their `BISG` instance. The primary public method of a `BISG` instance is `predict`. The `predict` method takes as arguments 
+In the instantiation of the `BISG` object, a series of probability look-up tables are constructed from 2010 and 2020 census data. These tables will be referenced when a user uses the predict method of their `BISG` instance. The primary public method of a `BISG` instance is `predict`. The `predict` method takes as arguments 
 1. `input_data`, a `pandas.DataFrame` class or a string path to a `.csv` or `.dta` file.
 
 2. `name_column`, a string which provides the name of the column which contains surname information
@@ -34,4 +32,4 @@ The predict method then will return a dictionary of dataframes of predicted race
 2. `'tract'` if `GEOID_column` was provided, and 
 3. `'blk_grp'` if `GEOID_column` was provided and `blk_grp = True`.
 
-The dataframes of predictions returned contain one column for the row number and then columns for the probability of each race in the race list.
+The dataframes of predictions returned contain one column for the row number and then columns for the probability of each race in the race list. If `only_final_probs` is false, then some of the intermediate, non-posterior probabilities will be returned as well.

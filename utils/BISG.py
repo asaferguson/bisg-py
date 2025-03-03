@@ -6,6 +6,20 @@ dirname = Path(__file__).parent.parent
 
 
 class BISG:
+    """
+    The BISG (Bayesian Improved Surname Geocoding) class is the main class that orchestrates
+    the process of predicting race probabilities based on surname and geographic location.
+    It initializes the necessary lookup tables and race predictor components using census data.
+
+    The class uses the following components:
+    - LookUpTables: Creates and manages lookup tables that map geographic and surname data to race probabilities.
+    - RacePredictor: Uses the lookup tables to predict race probabilities for individuals based on their surname and geographic location.
+
+    The BISG class provides a predict method that accepts input data along with the columns for geographic identifiers and surname,
+    and then uses the RacePredictor to perform the BISG method to infer a vector of posterior race probabilities.
+    The predictions can be made at different geographic levels: block group, tract, and ZIP code, and the results can be customized to include
+    only the final probabilities or intermediate values for debugging.
+    """
 
     def __init__(self,
 
@@ -84,9 +98,9 @@ if __name__ == "__main__":
         )
     )
     print("end")
-    print(
-        myBISG.LookupTables.pr_race_given_surname['name'][
-            (myBISG.LookupTables.pr_race_given_surname['name'] == 'nan') |
-            (myBISG.LookupTables.pr_race_given_surname['name'] == 'null')
-        ]
-    )
+    # print(
+    #     myBISG.LookupTables.pr_race_given_surname['name'][
+    #         (myBISG.LookupTables.pr_race_given_surname['name'] == 'nan') |
+    #         (myBISG.LookupTables.pr_race_given_surname['name'] == 'null')
+    #     ]
+    # )
